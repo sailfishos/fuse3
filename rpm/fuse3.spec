@@ -46,6 +46,7 @@ Man pages for %{name}.
 %package -n fuse-common
 Summary:    Common files for File System in Userspace (FUSE) v2 and v3
 License:    GPLv2
+Conflicts:  fuse <= 2.9.9+git1
 
 %description -n fuse-common
 Common files for FUSE v2 and FUSE v3.
