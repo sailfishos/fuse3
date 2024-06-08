@@ -1,5 +1,5 @@
 Name:       fuse3
-Version:    3.9.0
+Version:    3.16.2
 Release:    1
 Summary:    File System in Userspace (FUSE) v3 utilities
 License:    GPLv2
@@ -41,7 +41,7 @@ Summary:    Documentation for %{name}
 Requires:   %{name} = %{version}-%{release}
 
 %description doc
-Man pages for %{name}.
+Documentation for %{name}.
 
 %package -n fuse-common
 Summary:    Common files for File System in Userspace (FUSE) v2 and v3
@@ -49,7 +49,7 @@ License:    GPLv2
 Conflicts:  fuse <= 2.9.9+git1
 
 %description -n fuse-common
-Common files for FUSE v2 and FUSE v3.
+Common files for File System in Userspace (FUSE) v2 and v3.
 
 %prep
 %setup -q -n %{name}-%{version}/%{name}
@@ -89,23 +89,19 @@ rm -f %{buildroot}/lib/udev/rules.d/99-fuse3.rules
 %exclude %{_sysconfdir}/init.d/fuse3
 
 %files libs
-%defattr(-,root,root,-)
 %license LGPL2.txt
 %{_libdir}/libfuse3.so.*
 
 %files devel
-%defattr(-,root,root,-)
 %{_libdir}/libfuse3.so
 %{_libdir}/pkgconfig/fuse3.pc
 %dir %{_includedir}/fuse3
 %{_includedir}/fuse3/*.h
 
 %files doc
-%defattr(-,root,root,-)
 %doc AUTHORS ChangeLog.rst README.md
 %{_mandir}/man1/*
 %{_mandir}/man8/*
 
 %files -n fuse-common
-%defattr(-,root,root,-)
 %config %{_sysconfdir}/fuse.conf
